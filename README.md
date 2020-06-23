@@ -1,2 +1,2 @@
 # PKGBUILDS
-PKGBUILD files for packages used in our repo.
+PKGBUILDS of interest to TeArch. The source for packages we may do maintain in our repository...
