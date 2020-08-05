@@ -1,0 +1,25 @@
+# Maintainer: Muhammed Efe Cetin <efectn@6tel.net>
+pkgname=tearch-orchis-theme
+_pkgname=tearch-orchis-theme
+_destname1="/usr/share/themes/"
+_licensedir="/usr/share/tearch/licenses/"
+pkgver=1.0
+pkgrel=1
+pkgdesc="Orchis GTK theme for TeArch Linux."
+arch=('any')
+url="https://github.com/tearch-linux/tearch-orchis-theme"
+license=('GPL3')
+makedepends=('git')
+depends=()
+provides=("${pkgname}")
+options=(!strip !emptydirs)
+source=(${_pkgname}::"git+https://github.com/tearch-linux/${_pkgname}.git")
+sha256sums=('SKIP')
+package() {
+	install -dm755 ${pkgdir}${_licensedir}${_pkgname}
+	install -m644  ${srcdir}/${_pkgname}/LICENSE ${pkgdir}${_licensedir}${_pkgname}
+
+	install -dm755 ${pkgdir}${_destname1}
+	cp -r  ${srcdir}/${_pkgname}${_destname1}* ${pkgdir}${_destname1}
+}
+
