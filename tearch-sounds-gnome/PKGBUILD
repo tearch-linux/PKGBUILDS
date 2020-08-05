@@ -1,0 +1,26 @@
+# Maintainer: Muhammed Efe Cetin <efectn@6tel.net>
+pkgname=tearch-sounds-gnome
+_pkgname=tearch-sounds-gnome
+_destname1="/usr/share/sounds/"
+_licensedir="/usr/share/tearch/licenses/"
+pkgver=1.0
+pkgrel=1
+pkgdesc="System sounds for TeArch Linux Gnome."
+arch=('any')
+url="https://github.com/tearch-linux/tearch-sounds-gnome"
+license=('GPL3')
+makedepends=('git')
+depends=()
+provides=("${pkgname}")
+options=(!strip !emptydirs)
+source=(${_pkgname}::"git+https://github.com/tearch-linux/${_pkgname}.git")
+sha256sums=('SKIP')
+package() {
+	install -dm755 ${pkgdir}${_licensedir}${_pkgname}
+	install -m644  ${srcdir}/${_pkgname}/LICENSE ${pkgdir}${_licensedir}${_pkgname}
+
+	install -dm755 ${pkgdir}${_destname1}
+	cp -r  ${srcdir}/${_pkgname}${_destname1}* ${pkgdir}${_destname1}
+}
+
+
