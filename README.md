@@ -1,2 +1,2 @@
 # PKGBUILDS
-PKGBUILDS of interest to TeArch. The source for packages we may do maintain in our repository...
+This repo has been moved. Now, our codes hosted at https://gitlab.com/tearch-linux
